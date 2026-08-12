@@ -161,6 +161,7 @@
 					<excludes>
 						<exclude>**/config/**</exclude>
 						<exclude>**/*Application.class</exclude>
+						<exclude>**/infra/**</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
