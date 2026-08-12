@@ -24,7 +24,7 @@ spring:
             enable: true
 
 notification:
-  from: ${NOTIFICATION_FROM:noreply@fiapx.com}
+  from-email: ${NOTIFICATION_FROM_EMAIL:noreply@fiapx.com}
 
 management:
   endpoints:
@@ -34,13 +34,6 @@ management:
   endpoint:
     health:
       show-details: always
-      probes:
-        enabled: true
-  health:
-    livenessstate:
-      enabled: true
-    readinessstate:
-      enabled: true
   metrics:
     tags:
       service: notification-service
