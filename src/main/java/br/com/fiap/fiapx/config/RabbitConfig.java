@@ -1,5 +1,7 @@
 package br.com.fiap.fiapx.config;
 
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
@@ -10,6 +12,11 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig {
 
     public static final String NOTIFICATION_QUEUE = "video.notification";
+
+    @Bean
+    public Queue notificationQueue() {
+        return QueueBuilder.durable(NOTIFICATION_QUEUE).build();
+    }
 
     @Bean
     public Jackson2JsonMessageConverter jsonMessageConverter() {
