@@ -19,9 +19,9 @@ spring:
     properties:
       mail:
         smtp:
-          auth: true
+          auth: ${MAIL_SMTP_AUTH:false}
           starttls:
-            enable: true
+            enable: ${MAIL_SMTP_STARTTLS:false}
 
 notification:
   from-email: ${NOTIFICATION_FROM_EMAIL:noreply@fiapx.com}
